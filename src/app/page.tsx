@@ -4,6 +4,7 @@ import BooksTable from "@/components/home/BooksTable";
 import Link from "next/link";
 import { useState } from "react";
 import { MdOutlineAddBox } from "react-icons/md";
+import { books } from "@/data";
 
 export default function Home() {
   const [showType, setShowType] = useState<"table" | "card">("table");
@@ -31,7 +32,11 @@ export default function Home() {
         </Link>
       </div>
 
-      {showType === "table" ? <BooksTable /> : <BooksCard />}
+      {showType === "table" ? (
+        <BooksTable books={books} error={null} />
+      ) : (
+        <BooksCard />
+      )}
     </div>
   );
 }
