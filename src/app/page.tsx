@@ -35,7 +35,7 @@ export default function Home() {
       {showType === "table" ? (
         <BooksTable books={books} error={null} />
       ) : (
-        <BooksCard />
+        <BooksCard books={books} />
       )}
     </div>
   );
