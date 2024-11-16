@@ -4,7 +4,17 @@ import { BiPencil, BiShow, BiTrash, BiUserCircle } from "react-icons/bi";
 import { BsInfoCircle } from "react-icons/bs";
 import { PiBookOpenTextLight } from "react-icons/pi";
 
-const Card = ({ book }) => {
+export interface Book {
+  _id: string;
+  title: string;
+  author: string;
+  year: number;
+}
+interface BookCardProps {
+  book: Book;
+}
+
+const Card: React.FC<BookCardProps> = ({ book }) => {
   return (
     <div
       key={book._id}
