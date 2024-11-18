@@ -27,7 +27,7 @@ export default function Home() {
 
       <div className="flex justify-between items-center">
         <h1 className="text-4xl my-8">Books List</h1>
-        <Link href="">
+        <Link href="/books">
           <MdOutlineAddBox className="text-sky-800 text-4xl" />
         </Link>
       </div>
