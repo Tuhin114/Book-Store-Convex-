@@ -6,7 +6,7 @@ export const createBook = mutation({
   args: {
     title: v.string(),
     author: v.string(),
-    year: v.number(),
+    year: v.string(),
   },
   handler: async (ctx, args) => {
     const book = await ctx.db.insert("books", {
@@ -43,7 +43,7 @@ export const updateBook = mutation({
     id: v.id("books"),
     title: v.string(),
     author: v.string(),
-    year: v.number(),
+    year: v.string(),
   },
   handler: async (ctx, args) => {
     const book = await ctx.db.patch(args.id, {

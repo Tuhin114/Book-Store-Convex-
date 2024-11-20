@@ -5,6 +5,6 @@ export default defineSchema({
   books: defineTable({
     title: v.string(),
     author: v.string(),
-    year: v.number(),
+    year: v.string(),
   }),
 });

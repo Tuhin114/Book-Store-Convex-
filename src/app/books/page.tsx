@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 const CreateBook = () => {
   const [title, setTitle] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
-  const [year, setYear] = useState<number>(0);
+  const [year, setYear] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
   const router = useRouter();
@@ -65,9 +65,9 @@ const CreateBook = () => {
         <div className="my-4">
           <label className="text-xl mr-4 text-gray-500">Publish Year</label>
           <input
-            type="number"
+            type="text"
             value={year}
-            onChange={(e) => setYear(parseInt(e.target.value))}
+            onChange={(e) => setYear(e.target.value)}
             className="border-2 text-gray-500 px-4 py-2 w-full rounded-md"
             placeholder="Enter year of publication"
           />
