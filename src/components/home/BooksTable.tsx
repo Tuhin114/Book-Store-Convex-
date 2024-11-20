@@ -11,11 +11,13 @@ export interface Book {
   year: string;
 }
 interface BooksTableProps {
-  books: Book[];
+  books: Book[] | undefined;
   error?: Error | null;
 }
 
 const BooksTable: React.FC<BooksTableProps> = ({ books, error }) => {
+  console.log(books);
+  if (!books) return <div>Loading books...</div>;
   return (
     <div>
       <table className="w-full border-separate border-spacing-2">

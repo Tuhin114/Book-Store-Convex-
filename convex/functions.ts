@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 
 // Create new book
 export const createBook = mutation({
@@ -19,7 +19,7 @@ export const createBook = mutation({
 });
 
 //Get all books
-export const getBooks = mutation({
+export const getBooks = query({
   handler: async (ctx) => {
     const books = await ctx.db.query("books").collect();
     return books;
