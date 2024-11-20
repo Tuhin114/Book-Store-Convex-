@@ -16,7 +16,6 @@ interface BooksTableProps {
 }
 
 const BooksTable: React.FC<BooksTableProps> = ({ books, error }) => {
-  console.log(books);
   if (!books) return <div>Loading books...</div>;
   return (
     <div>

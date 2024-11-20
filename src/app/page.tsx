@@ -10,7 +10,7 @@ import { api } from "../../convex/_generated/api";
 export default function Home() {
   const books = useQuery(api.functions.getBooks);
   const [showType, setShowType] = useState<"table" | "card">("table");
-  const error = false;
+  const error = null;
 
   return (
     <div className="p-4">
