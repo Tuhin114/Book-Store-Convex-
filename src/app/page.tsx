@@ -35,7 +35,7 @@ export default function Home() {
       {/* Header and Add Button */}
       <div className="flex justify-between items-center">
         <h1 className="text-4xl my-8">Books List</h1>
-        <Link href="/books">
+        <Link href="/books/create">
           <MdOutlineAddBox
             aria-label="Add Book"
             className="text-sky-800 text-4xl"

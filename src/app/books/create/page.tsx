@@ -5,7 +5,7 @@ import Spinner from "@/components/ui/Spinner";
 import { useMutation } from "convex/react";
 import { enqueueSnackbar } from "notistack";
 import React, { useState } from "react";
-import { api } from "../../../convex/_generated/api";
+import { api } from "../../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
 
 const CreateBook = () => {
