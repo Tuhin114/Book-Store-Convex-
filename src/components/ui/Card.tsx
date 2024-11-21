@@ -37,7 +37,7 @@ const Card: React.FC<BookCardProps> = ({ book }) => {
         <Link href={`/books/details/${book._id}`}>
           <BsInfoCircle className="text-2xl text-green-800 hover:text-black" />
         </Link>
-        <Link href={`/books/edit/${book._id}`}>
+        <Link href={`/books/update/${book._id}`}>
           <BiPencil className="text-2xl text-yellow-800 hover:text-black" />
         </Link>
         <Link href={`/books/delete/${book._id}`}>

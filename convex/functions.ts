@@ -27,7 +27,7 @@ export const getBooks = query({
 });
 
 //Get book by id
-export const getBook = mutation({
+export const getBook = query({
   args: {
     id: v.id("books"),
   },

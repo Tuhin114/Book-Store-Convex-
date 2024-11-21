@@ -54,7 +54,7 @@ const BooksTable: React.FC<BooksTableProps> = ({ books, error }) => {
                     <Link href={`/books/details/${book._id}`}>
                       <BsInfoCircle className="text-2xl text-green-800" />
                     </Link>
-                    <Link href={`/books/edit/${book._id}`}>
+                    <Link href={`/books/update/${book._id}`}>
                       <AiOutlineEdit className="text-2xl text-yellow-600" />
                     </Link>
                     <Link href={`/books/delete/${book._id}`}>
