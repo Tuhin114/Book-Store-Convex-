@@ -1,8 +1,9 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { BiPencil, BiShow, BiTrash, BiUserCircle } from "react-icons/bi";
 import { BsInfoCircle } from "react-icons/bs";
 import { PiBookOpenTextLight } from "react-icons/pi";
+import BookModal from "./BookModal";
 
 export interface Book {
   _id: string;
@@ -15,6 +16,7 @@ interface BookCardProps {
 }
 
 const Card: React.FC<BookCardProps> = ({ book }) => {
+  const [showModal, setShowModal] = useState<boolean>(false);
   return (
     <div
       key={book._id}
@@ -33,7 +35,10 @@ const Card: React.FC<BookCardProps> = ({ book }) => {
         <h2 className="my-1">{book.author}</h2>
       </div>
       <div className="flex justify-start items-center gap-x-2 mt-4 p-4">
-        <BiShow className="text-3xl text-blue-800 hover:text-black cursor-pointer" />
+        <BiShow
+          className="text-3xl text-blue-800 hover:text-black cursor-pointer"
+          onClick={() => setShowModal(true)}
+        />
         <Link href={`/books/details/${book._id}`}>
           <BsInfoCircle className="text-2xl text-green-800 hover:text-black" />
         </Link>
@@ -44,6 +49,9 @@ const Card: React.FC<BookCardProps> = ({ book }) => {
           <BiTrash className="text-2xl text-red-800 hover:text-black" />
         </Link>
       </div>
+      {showModal && (
+        <BookModal book={book} onClose={() => setShowModal(false)} />
+      )}
     </div>
   );
 };
